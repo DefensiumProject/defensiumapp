@@ -1,0 +1,29 @@
+@import "@ionic/angular/css/core.css";
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+// @import "@ionic/angular/css/palettes/dark.always.css";
+// @import '@ionic/angular/css/palettes/dark.system.css';
+@import "@ionic/angular/css/palettes/dark.class.css";
+@import url("./theme/fonts.scss");
+
+* {
+    font-family: "Lexend";
+}
+
+:root {
+    --gray-color-100: #edeff2;
+    --gray-color-400: #778495;
+    --gray-color-500: #444f60;
+    --blue-color-300: #8b00f3;
+}
+
+ion-header {
+    box-shadow: none !important;
+}
