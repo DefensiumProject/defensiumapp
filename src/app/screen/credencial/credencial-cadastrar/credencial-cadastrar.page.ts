@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { IonButton, IonContent, IonIcon, IonLabel, ToastController, LoadingController, ModalController } from '@ionic/angular/standalone';
+import { IonButton, IonContent, IonIcon, IonLabel, LoadingController, ModalController, ToastController } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { lockClosedOutline, mailOutline, personOutline, cloudDoneOutline } from 'ionicons/icons';
+import { cloudDoneOutline, lockClosedOutline, mailOutline, personOutline } from 'ionicons/icons';
 import { PlataformaPage } from 'src/app/component/modal/plataforma/plataforma.page';
-import { CredencialCadastrarModel } from 'src/app/model/credencial-cadastrar.model';
+import { CredencialModel } from 'src/app/model/credencial.model';
 import { CredencialService } from 'src/app/service/credencial.service';
 
 @Component({
@@ -27,7 +27,7 @@ export class CredencialCadastrarPage implements OnInit {
 
   private modalController = inject(ModalController);
 
-  private credencialCadastrarModel!: CredencialCadastrarModel;
+  private credencialModel!: CredencialModel;
 
   private credencialService = inject(CredencialService);
 
@@ -55,9 +55,9 @@ export class CredencialCadastrarPage implements OnInit {
       return;
     }
     if (this.formGroupCredencial.valid) {
-      this.credencialCadastrarModel = this.formGroupCredencial.value as CredencialCadastrarModel;
+      this.credencialModel = this.formGroupCredencial.value as CredencialModel;
 
-      this.credencialService.cadastrarCredencial(this.credencialCadastrarModel).subscribe({
+      this.credencialService.cadastrarCredencial(this.credencialModel).subscribe({
         next: (response: any) => {
           this.formGroupCredencial.reset();
           this.apresentarCarregamento();

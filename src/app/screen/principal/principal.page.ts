@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { IonContent, IonIcon, IonLabel } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { chevronForwardOutline } from 'ionicons/icons';
-import { CredencialCadastrarModel } from 'src/app/model/credencial-cadastrar.model';
+import { CredencialModel } from 'src/app/model/credencial.model';
 import { CredencialService } from 'src/app/service/credencial.service';
 
 @Component({
@@ -38,7 +38,7 @@ export class PrincipalPage implements OnInit {
   public recuperarCredencialList() {
     this.credencialService.recuperarCredencialList().subscribe({
       next: (response: any) => {
-        this.credencialList = response.sort((a: CredencialCadastrarModel, b: CredencialCadastrarModel) => {
+        this.credencialList = response.sort((a: CredencialModel, b: CredencialModel) => {
           return a.plataforma.nome.localeCompare(b.plataforma.nome);
         });
       }

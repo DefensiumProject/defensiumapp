@@ -6,7 +6,7 @@ import { IonButton, IonContent, IonIcon, IonLabel, LoadingController, ModalContr
 import { addIcons } from 'ionicons';
 import { cloudDoneOutline, lockClosedOutline, mailOutline, personOutline } from 'ionicons/icons';
 import { PlataformaPage } from 'src/app/component/modal/plataforma/plataforma.page';
-import { CredencialEditarModel } from 'src/app/model/credencial-editar.model';
+import { CredencialModel } from 'src/app/model/credencial.model';
 import { CredencialService } from 'src/app/service/credencial.service';
 
 @Component({
@@ -22,8 +22,6 @@ export class CredencialEditarPage implements OnInit {
 
   private credencialService = inject(CredencialService);
 
-  public credencialModel: any;
-
   public formGroupCredencial!: FormGroup;
 
   private formBuilder = inject(FormBuilder);
@@ -34,7 +32,7 @@ export class CredencialEditarPage implements OnInit {
 
   private modalController = inject(ModalController);
 
-  private credencialEditarModel!: CredencialEditarModel;
+  private credencialModel!: CredencialModel;
 
   private credencialID: number = 0;
 
@@ -70,10 +68,10 @@ export class CredencialEditarPage implements OnInit {
       return;
     }
     if (this.formGroupCredencial.valid) {
-      this.credencialEditarModel = this.formGroupCredencial.value as CredencialEditarModel;
-      this.credencialEditarModel.codigo = this.credencialID;
+      this.credencialModel = this.formGroupCredencial.value as CredencialModel;
+      this.credencialModel.codigo = this.credencialID;
 
-      this.credencialService.atualizarCredencial(this.credencialEditarModel).subscribe({
+      this.credencialService.atualizarCredencial(this.credencialModel).subscribe({
         next: (response: any) => {
           this.formGroupCredencial.reset();
           this.apresentarCarregamento();

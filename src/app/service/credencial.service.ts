@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CredencialCadastrarModel } from '../model/credencial-cadastrar.model';
+import { CredencialModel } from '../model/credencial.model';
 
 @Injectable({
   providedIn: 'root'
@@ -14,9 +14,9 @@ export class CredencialService {
 
   constructor() { }
 
-  public cadastrarCredencial(credencialCadastrarModel: CredencialCadastrarModel) : Observable<CredencialCadastrarModel> {
-    console.log(credencialCadastrarModel);
-    return this.httpClient.post<CredencialCadastrarModel>(this.URL, credencialCadastrarModel);
+  public cadastrarCredencial(credencialModel: CredencialModel) : Observable<CredencialModel> {
+    console.log(credencialModel);
+    return this.httpClient.post<CredencialModel>(this.URL, credencialModel);
   }
 
   public recuperarCredencialList() : Observable<any> {
