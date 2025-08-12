@@ -1,0 +1,29 @@
+<ion-content>
+
+  <section id="credencial">
+
+    <div class="credencial-header">
+      <ion-label>Últimas Credenciais</ion-label>
+      <ion-label>Ver Mais</ion-label>
+    </div>
+
+    <div class="credencial-content">
+
+      @for (credencial of credencialList; track credencial) {
+        <div class="credencial-content-item">
+            <img [src]="credencial.plataforma.icone"/>
+            <ion-label>
+              <span>{{ credencial.descricao	}}</span>
+              <p>
+                {{ credencial.plataforma.url }}
+              </p>
+            </ion-label>
+            <ion-icon name="chevron-forward-outline" (click)="redirecionarTelaCredencialEditar(credencial)"></ion-icon>
+        </div>
+      }
+
+    </div>
+
+  </section>
+
+</ion-content>

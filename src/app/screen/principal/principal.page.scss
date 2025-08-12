@@ -1,0 +1,57 @@
+#credencial {
+    padding: 1rem;
+
+    .credencial-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        ion-label:nth-child(1) {
+            font-size: large;
+        }
+
+        ion-label:nth-child(2) {
+            font-size: smaller;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    }
+
+    .credencial-content {
+        position: relative;
+        margin-top: 2rem;
+        .credencial-content-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            // border: dashed red 2px;
+            background: var(--gray-color-100);
+            padding: 0.7rem;
+            margin-top: 0.7rem;
+            border-radius: 12px;
+
+            img {
+                width: 50px;
+                height: 50px;
+                object-fit: cover;
+                border-radius: 45px;
+                cursor: pointer;
+                opacity: .8;
+            }
+
+            ion-label {
+                position: absolute;
+                left: 5rem;
+                p {
+                    margin-top: 0.4rem;
+                }
+            }
+
+            ion-icon {
+                font-size: larger;
+                cursor: pointer;
+                color: var(--gray-color-500);
+            }
+        }
+    }
+}

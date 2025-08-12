@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonItem, IonLabel, IonList, IonSearchbar, IonTitle, IonToolbar, ModalController } from '@ionic/angular/standalone';
+import { IonContent, IonItem, IonLabel, IonList, IonSearchbar, ModalController } from '@ionic/angular/standalone';
 import { PlataformaModel } from 'src/app/model/plataforma.model';
 import { PlataformaService } from 'src/app/service/plataforma.service';
 
@@ -10,7 +10,7 @@ import { PlataformaService } from 'src/app/service/plataforma.service';
   templateUrl: './plataforma.page.html',
   styleUrls: ['./plataforma.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, IonSearchbar, IonList, IonItem, IonLabel, CommonModule, FormsModule]
+  imports: [IonContent, IonSearchbar, IonList, IonItem, IonLabel, CommonModule, FormsModule]
 })
 export class PlataformaPage implements OnInit {
 

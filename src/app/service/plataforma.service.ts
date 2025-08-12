@@ -8,7 +8,7 @@ import { PlataformaModel } from '../model/plataforma.model';
 })
 export class PlataformaService {
 
-  private readonly URL = "http://localhost:3000/defensium/plataforma";
+  private readonly URL = "http://192.168.15.18:3000/defensium/plataforma";
 
   private httpClient = inject(HttpClient);
 

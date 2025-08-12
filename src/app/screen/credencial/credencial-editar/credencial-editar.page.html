@@ -1,0 +1,54 @@
+<ion-content class="ion-padding">
+
+  <div class="pesquisar"></div>
+
+  <div class="organizacao"></div>
+
+  <form [formGroup]="formGroupCredencial" (ngSubmit)="updateCredencial()">
+
+    <div (click)="abrirModalPlataforma()" class="form-item">
+      <ion-label>Plataforma</ion-label>
+      <ion-icon name="cloud-done-outline"></ion-icon>
+      <input type="text" formControlName="plataforma" [value]="formGroupCredencial.get('plataforma')?.value?.nome"
+        placeholder="Escolha a Plataforma" readonly />
+      <span *ngIf="validarCampoInvalido('plataforma', 'required')">Campo de Preenchimento Obrigatório</span>
+      <span *ngIf="validarCampoInvalido('plataforma', 'minlength')">Mínimo de 3 caracteres</span>
+    </div>
+
+    <div class="form-item">
+      <ion-label>Descrição</ion-label>
+      <ion-icon name="person-outline"></ion-icon>
+      <input type="text" formControlName="descricao" placeholder="Informe a Descrição" maxlength="60" />
+      <span *ngIf="validarCampoInvalido('descricao', 'required')">Campo de Preenchimento Obrigatório</span>
+      <span *ngIf="validarCampoInvalido('descricao', 'minlength')">Mínimo de 3 caracteres</span>
+    </div>
+
+    <div class="form-item">
+      <ion-label>Usuário</ion-label>
+      <ion-icon name="person-outline"></ion-icon>
+      <input type="text" formControlName="usuario" placeholder="Informe seu Usuário" maxlength="60" />
+      <span *ngIf="validarCampoInvalido('usuario', 'required')">Campo de Preenchimento Obrigatório</span>
+      <span *ngIf="validarCampoInvalido('usuario', 'minlength')">Mínimo de 3 caracteres</span>
+    </div>
+
+    <div class="form-item">
+      <ion-label>Senha</ion-label>
+      <ion-icon name="lock-closed-outline"></ion-icon>
+      <input type="password" formControlName="senha" placeholder="Informe sua Senha" maxlength="60" />
+      <span *ngIf="validarCampoInvalido('senha', 'required')">Campo de Preenchimento Obrigatório</span>
+      <span *ngIf="validarCampoInvalido('senha', 'minlength')">Mínimo de 3 caracteres</span>
+    </div>
+
+    <div class="form-item">
+      <ion-label>Endereço</ion-label>
+      <ion-icon name="lock-closed-outline"></ion-icon>
+      <input type="text" formControlName="endereco" placeholder="http://www..." />
+    </div>
+
+    <div class="form-item">
+      <ion-button type="submit" [disabled]="!formGroupCredencial.valid" expand="block">Atializar</ion-button>
+    </div>
+
+  </form>
+
+</ion-content>
