@@ -22,4 +22,8 @@ export const routes: Routes = [
     path: 'credencial-editar',
     loadComponent: () => import('./screen/credencial/credencial-editar/credencial-editar.page').then( m => m.CredencialEditarPage)
   },
+  {
+    path: 'credencial-detalhar',
+    loadComponent: () => import('./screen/credencial-detalhar/credencial-detalhar.page').then( m => m.CredencialDetalharPage)
+  },
 ];

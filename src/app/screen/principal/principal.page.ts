@@ -51,4 +51,10 @@ export class PrincipalPage implements OnInit {
     });
   }
 
+  public redirecionarTelaCredencialDetalhar(credencial: any) {
+    this.router.navigate(['/credencial-detalhar'], {
+      queryParams: { credencialID: credencial.codigo }
+    });
+  }
+
 }

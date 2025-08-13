@@ -1,0 +1,129 @@
+ion-header {
+    ion-toolbar {
+        padding: 0.5rem;
+
+        .cabecalho {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .botao-fechar {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 30px;
+                height: 30px;
+                background-color: var(--gray-color-100);
+                border-radius: 50%;
+                cursor: pointer;
+            }
+
+            ion-icon {
+                font-size: larger;
+            }
+
+            ion-title {
+                text-align: center;
+
+                ion-label {
+                    font-weight: bold;
+                }
+            }
+
+            a {
+                cursor: pointer;
+            }
+        }
+
+        .content {
+            margin-top: 1.8rem;
+            text-align: center;
+
+            img {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
+ion-content {
+    form {
+        .form-item {
+            margin-bottom: 1rem;
+            position: relative;
+
+            ion-label {
+                display: block;
+                margin-bottom: 0.7rem;
+                font-weight: bold;
+            }
+
+            ion-icon {
+                position: absolute;
+                top: 3rem;
+                padding-left: 1rem;
+                color: var(--gray-color-500);
+                font-size: 22px;
+            }
+
+            input {
+                width: 100%;
+                height: 60px;
+                border-radius: 26px;
+                border: none;
+                outline: none;
+                background: var(--gray-color-100);
+                font-weight: bold;
+                color: var(--gray-color-500);
+                padding-left: 3rem;
+            }
+
+            input:focus {
+                border: solid 1.4px var(--blue-color-300);
+            }
+
+            ::placeholder {
+                font-weight: bold;
+                color: var(--gray-color-400);
+            }
+
+            .icone-copiar,
+            .icone-acessar {
+                position: absolute;
+                top: 0rem;
+                right: 3.5rem;
+
+                // border: dashed red 1px;
+                ion-icon {
+                    cursor: pointer;
+                }
+            }
+
+            ion-button {
+                width: 90%;
+                margin: auto;
+                height: 65px;
+                --background: var(--blue-color-300);
+                --border-radius: 36px;
+                margin-top: 3rem;
+            }
+
+            span {
+                display: block;
+                margin-top: 0.5rem;
+                font-size: 0.85rem;
+                color: red;
+                padding-left: 1rem;
+            }
+        }
+
+        .form-item input[readonly] {
+            background-color: #e5e4e4;
+            color: #9a9a9a;
+            cursor: not-allowed;
+            // border: dashed red 2px;
+        }
+    }
+}

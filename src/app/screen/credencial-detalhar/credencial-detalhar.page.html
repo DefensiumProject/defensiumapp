@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="cabecalho">
+      <div (click)="redirecionarTelaPrincipal()" class="botao-fechar">
+        <ion-icon name="close-outline"></ion-icon>
+      </div>
+      <ion-title>
+        <ion-label>
+          {{ formGroupCredencial.get('plataforma')?.value?.nome }}
+        </ion-label>
+      </ion-title>
+      <a (click)="redirecionarTelaCredencialEditar()">
+        Editar
+      </a>
+    </div>
+    <div class="content">
+      <img [src]="formGroupCredencial.get('plataforma')?.value?.icone" />
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <div class="pesquisar"></div>
+
+  <div class="organizacao"></div>
+
+  <form [formGroup]="formGroupCredencial" (ngSubmit)="updateCredencial()">
+
+    <div class="form-item">
+      <ion-label>Plataforma</ion-label>
+      <ion-icon name="cloud-done-outline"></ion-icon>
+      <input type="text" formControlName="plataforma" [value]="formGroupCredencial.get('plataforma')?.value?.nome"
+        placeholder="Escolha a Plataforma" readonly />
+      <span *ngIf="validarCampoInvalido('plataforma', 'required')">Campo de Preenchimento Obrigatório</span>
+      <span *ngIf="validarCampoInvalido('plataforma', 'minlength')">Mínimo de 3 caracteres</span>
+    </div>
+
+    <div class="form-item">
+      <ion-label>Descrição</ion-label>
+      <ion-icon name="person-outline"></ion-icon>
+      <input type="text" formControlName="descricao" placeholder="Informe a Descrição" maxlength="60" readonly>
+      <span *ngIf="validarCampoInvalido('descricao', 'required')">Campo de Preenchimento Obrigatório</span>
+      <span *ngIf="validarCampoInvalido('descricao', 'minlength')">Mínimo de 3 caracteres</span>
+    </div>
+
+    <div class="form-item">
+      <ion-label>Usuário</ion-label>
+      <ion-icon name="person-outline"></ion-icon>
+      <input type="text" formControlName="usuario" placeholder="Informe seu Usuário" maxlength="60" readonly/>
+      <div (click)="copiarDadosAreaTransferencia('usuario')" class="icone-copiar">
+        <ion-icon name="copy-outline"></ion-icon>
+      </div>
+      <span *ngIf="validarCampoInvalido('usuario', 'required')">Campo de Preenchimento Obrigatório</span>
+      <span *ngIf="validarCampoInvalido('usuario', 'minlength')">Mínimo de 3 caracteres</span>
+    </div>
+
+    <div class="form-item">
+      <ion-label>Senha</ion-label>
+      <ion-icon name="lock-closed-outline"></ion-icon>
+      <input type="password" formControlName="senha" placeholder="Informe sua Senha" maxlength="60" readonly/>
+      <div (click)="copiarDadosAreaTransferencia('senha')" class="icone-copiar">
+        <ion-icon name="copy-outline"></ion-icon>
+      </div>
+      <span *ngIf="validarCampoInvalido('senha', 'required')">Campo de Preenchimento Obrigatório</span>
+      <span *ngIf="validarCampoInvalido('senha', 'minlength')">Mínimo de 3 caracteres</span>
+    </div>
+
+    <div class="form-item">
+      <ion-label>Endereço</ion-label>
+      <ion-icon name="lock-closed-outline"></ion-icon>
+      <input type="text" formControlName="endereco" placeholder="http://www..." readonly/>
+      <div class="icone-acessar">
+        <ion-icon name="link-outline"></ion-icon>
+      </div>
+    </div>
+
+    <div class="form-item">
+      <ion-button type="submit" [disabled]="!formGroupCredencial.valid" expand="block">Atualizar</ion-button>
+    </div>
+
+  </form>
+
+</ion-content>
