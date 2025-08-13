@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment.prod';
 import { PlataformaModel } from '../model/plataforma.model';
 
 @Injectable({
@@ -8,7 +9,7 @@ import { PlataformaModel } from '../model/plataforma.model';
 })
 export class PlataformaService {
 
-  private readonly URL = "http://192.168.15.18:3000/defensium/plataforma";
+  private readonly URL = environment.url;
 
   private httpClient = inject(HttpClient);
 
