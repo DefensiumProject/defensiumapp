@@ -29,7 +29,6 @@ export class CredencialService {
   }
 
   public atualizarCredencial(credencialModel: any) : Observable<any> {
-    debugger
     return this.httpClient.put<any>(this.URL.concat("/").concat(credencialModel.codigo), credencialModel);
   }
 

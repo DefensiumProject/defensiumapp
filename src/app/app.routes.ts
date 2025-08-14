@@ -15,10 +15,6 @@ export const routes: Routes = [
     loadComponent: () => import('./component/modal/plataforma/plataforma.page').then( m => m.PlataformaPage)
   },
   {
-    path: 'principal',
-    loadComponent: () => import('./screen/principal/principal.page').then( m => m.PrincipalPage)
-  },
-  {
     path: 'credencial-editar',
     loadComponent: () => import('./screen/credencial/credencial-editar/credencial-editar.page').then( m => m.CredencialEditarPage)
   },
