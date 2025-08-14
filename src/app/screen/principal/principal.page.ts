@@ -2,9 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { IonContent, IonIcon, IonLabel } from '@ionic/angular/standalone';
+import { IonContent, IonIcon, IonLabel, IonHeader, IonToolbar, IonAvatar, IonText } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { chevronForwardOutline } from 'ionicons/icons';
+import { chevronForwardOutline, notificationsOutline } from 'ionicons/icons';
 import { CredencialModel } from 'src/app/model/credencial.model';
 import { CredencialService } from 'src/app/service/credencial.service';
 
@@ -13,7 +13,7 @@ import { CredencialService } from 'src/app/service/credencial.service';
   templateUrl: './principal.page.html',
   styleUrls: ['./principal.page.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, IonContent, IonLabel, IonIcon]
+  imports: [IonText, IonAvatar, IonToolbar, IonHeader, CommonModule, FormsModule, IonContent, IonLabel, IonIcon]
 })
 export class PrincipalPage implements OnInit {
 
@@ -24,9 +24,7 @@ export class PrincipalPage implements OnInit {
   private router = inject(Router);
 
   constructor() {
-    addIcons({
-      chevronForwardOutline
-    });
+    addIcons({notificationsOutline,chevronForwardOutline});
   }
 
   ngOnInit() { }

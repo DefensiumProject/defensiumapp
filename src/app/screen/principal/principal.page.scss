@@ -1,60 +1,144 @@
+#header {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .box-a {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    ion-avatar {
+      padding: 0.1rem;
+      border: solid silver 3px;
+
+      img {
+        object-fit: cover;
+      }
+    }
+
+    ion-text {
+      margin-left: 1rem;
+
+      b {
+        font-size: 1.1rem;
+      }
+
+      p {
+        margin-top: 0.1rem;
+        font-size: 1rem;
+        color: #758393;
+      }
+    }
+  }
+
+  .box-b {
+    ion-icon {
+      font-size: 1.9rem;
+      color: rgb(138, 138, 138);
+      margin-right: 1.4rem;
+      cursor: pointer;
+    }
+  }
+}
+
+#searchbar {
+  padding: 1rem;
+
+  .searchbar {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    img {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      // top: 2.3rem;
+      margin-left: 1rem;
+    }
+
+    input {
+      width: 100%;
+      height: 60px;
+      border-radius: 50px;
+      background: #EEF0F2;
+      color: black;
+      outline: none;
+      border: none;
+      padding-left: 3rem;
+    }
+
+    ::placeholder {
+      color: #526578;
+      font-weight: bold;
+    }
+  }
+}
+
 #credencial {
-    padding: 1rem;
+  padding: 1rem;
 
-    .credencial-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+  .credencial-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-        ion-label:nth-child(1) {
-            font-size: large;
-        }
-
-        ion-label:nth-child(2) {
-            font-size: smaller;
-            font-weight: bold;
-            cursor: pointer;
-        }
+    ion-label:nth-child(1) {
+      font-size: large;
     }
 
-    .credencial-content {
-        position: relative;
-        margin-top: 2rem;
-        .credencial-content-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            // border: dashed red 2px;
-            background: var(--gray-color-100);
-            padding: 0.7rem;
-            margin-top: 0.7rem;
-            border-radius: 12px;
-            transition: all 0.3s ease-in;
-            img {
-                width: 50px;
-                height: 50px;
-                object-fit: cover;
-                border-radius: 45px;
-                cursor: pointer;
-                opacity: 1;
-            }
-
-            ion-label {
-                position: absolute;
-                left: 5rem;
-                p {
-                    margin-top: 0.4rem;
-                }
-            }
-
-            ion-icon {
-                font-size: larger;
-                cursor: pointer;
-                color: var(--gray-color-500);
-            }
-        }
-        .credencial-content-item:focus, .credencial-content-item:hover {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+    ion-label:nth-child(2) {
+      font-size: smaller;
+      font-weight: bold;
+      cursor: pointer;
     }
+  }
+
+  .credencial-content {
+    position: relative;
+    margin-top: 2rem;
+
+    .credencial-content-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      // border: dashed red 2px;
+      background: var(--gray-color-100);
+      padding: 0.7rem;
+      margin-top: 0.7rem;
+      border-radius: 12px;
+      transition: all 0.3s ease-in;
+
+      img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 45px;
+        cursor: pointer;
+        opacity: 1;
+      }
+
+      ion-label {
+        position: absolute;
+        left: 5rem;
+
+        p {
+          margin-top: 0.4rem;
+        }
+      }
+
+      ion-icon {
+        font-size: larger;
+        cursor: pointer;
+        color: var(--gray-color-500);
+      }
+    }
+
+    .credencial-content-item:focus,
+    .credencial-content-item:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
 }
