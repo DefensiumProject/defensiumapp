@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment.prod';
 import { CredencialModel } from '../model/credencial.model';
 
 @Injectable({
@@ -8,7 +9,7 @@ import { CredencialModel } from '../model/credencial.model';
 })
 export class CredencialService {
 
-  private readonly URL = "http://192.168.15.18:3000/defensium/credencial";
+  private readonly URL = environment.url.concat("/credencial");
 
   private httpClient = inject(HttpClient);
 

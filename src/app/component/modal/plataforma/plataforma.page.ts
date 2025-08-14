@@ -29,7 +29,9 @@ export class PlataformaPage implements OnInit {
   public getPlataformaList() {
     this.plataformaService.getCredencialList().subscribe({
       next: (response: any) => {
-        this.plataformList = response;
+        this.plataformList = response.sort((plataformaModelA: PlataformaModel, plataformaModelB: PlataformaModel) => {
+          return plataformaModelA.nome.localeCompare(plataformaModelB.nome);
+        });
       },
       error: (response: any) => {
         console.log("Falha ao tentar recuperar os dados!");
