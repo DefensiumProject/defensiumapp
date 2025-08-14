@@ -9,7 +9,7 @@ import { CredencialModel } from '../model/credencial.model';
 })
 export class CredencialService {
 
-  private readonly URL = environment.url;
+  private readonly URL = environment.url.concat("/credencial");
 
   private httpClient = inject(HttpClient);
 

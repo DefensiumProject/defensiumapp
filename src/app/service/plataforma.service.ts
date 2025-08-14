@@ -9,7 +9,7 @@ import { PlataformaModel } from '../model/plataforma.model';
 })
 export class PlataformaService {
 
-  private readonly URL = environment.url;
+  private readonly URL = environment.url.concat("/plataforma");
 
   private httpClient = inject(HttpClient);
 

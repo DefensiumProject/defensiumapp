@@ -4,7 +4,7 @@
 
     <div class="credencial-header">
       <ion-label>Últimas Credenciais</ion-label>
-      <ion-label>Ver Mais</ion-label>
+      <!-- <ion-label>Ver Mais</ion-label> -->
     </div>
 
     <div class="credencial-content">
@@ -15,7 +15,7 @@
             <ion-label>
               <span>{{ credencial.descricao	}}</span>
               <p>
-                {{ credencial.plataforma.url }}
+                {{ credencial.plataforma.url }} ({{ credencial.usuario }})
               </p>
             </ion-label>
             <ion-icon name="chevron-forward-outline" (click)="redirecionarTelaCredencialDetalhar(credencial)"></ion-icon>

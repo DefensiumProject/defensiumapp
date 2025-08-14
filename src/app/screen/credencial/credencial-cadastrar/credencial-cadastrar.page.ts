@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { IonButton, IonContent, IonIcon, IonLabel, LoadingController, ModalController, ToastController } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { cloudDoneOutline, lockClosedOutline, mailOutline, personOutline } from 'ionicons/icons';
@@ -30,6 +31,8 @@ export class CredencialCadastrarPage implements OnInit {
   private credencialModel!: CredencialModel;
 
   private credencialService = inject(CredencialService);
+
+  private router = inject(Router);
 
   constructor() {
     addIcons({ cloudDoneOutline, personOutline, lockClosedOutline, mailOutline });
@@ -66,6 +69,7 @@ export class CredencialCadastrarPage implements OnInit {
             this.apresentarToastSucesso("Credencial Cadastrada com Sucesso!");
             return;
           }, 1500);
+          this.redirecionarTelaPrincipal();
         },
         error: (response: any) => {
           console.error("Falha ao tentar realizar a requisição!");
@@ -123,6 +127,10 @@ export class CredencialCadastrarPage implements OnInit {
       });
     }
 
+  }
+
+  public redirecionarTelaPrincipal() {
+    this.router.navigate(['/principal']);
   }
 
 }
