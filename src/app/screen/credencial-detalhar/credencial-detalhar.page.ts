@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IonButton, IonContent, IonHeader, IonIcon, IonLabel, IonTitle, IonToolbar, LoadingController, ModalController, ToastController } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonIcon, IonLabel, IonTitle, IonToolbar, LoadingController, ModalController, ToastController } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { closeOutline, cloudDoneOutline, copyOutline, linkOutline, lockClosedOutline, mailOutline, personOutline } from 'ionicons/icons';
 import { PlataformaPage } from 'src/app/component/modal/plataforma/plataforma.page';
@@ -14,7 +14,7 @@ import { CredencialService } from 'src/app/service/credencial.service';
   templateUrl: './credencial-detalhar.page.html',
   styleUrls: ['./credencial-detalhar.page.scss'],
   standalone: true,
-  imports: [IonTitle, IonToolbar, IonHeader, CommonModule, FormsModule, ReactiveFormsModule, IonContent, IonLabel, IonIcon, IonButton]
+  imports: [IonTitle, IonToolbar, IonHeader, CommonModule, FormsModule, ReactiveFormsModule, IonContent, IonLabel, IonIcon]
 })
 export class CredencialDetalharPage implements OnInit {
 
