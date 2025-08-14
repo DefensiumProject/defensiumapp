@@ -2,9 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IonContent, IonHeader, IonIcon, IonLabel, IonTitle, IonToolbar, LoadingController, ModalController, ToastController } from '@ionic/angular/standalone';
+import { AlertController, IonButton, IonContent, IonHeader, IonIcon, IonLabel, IonTitle, IonToolbar, LoadingController, ModalController, ToastController } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { closeOutline, cloudDoneOutline, copyOutline, linkOutline, lockClosedOutline, mailOutline, personOutline } from 'ionicons/icons';
+import { closeOutline, cloudDoneOutline, copyOutline, linkOutline, lockClosedOutline, mailOutline, personOutline, star, trashOutline } from 'ionicons/icons';
 import { PlataformaPage } from 'src/app/component/modal/plataforma/plataforma.page';
 import { CredencialModel } from 'src/app/model/credencial.model';
 import { CredencialService } from 'src/app/service/credencial.service';
@@ -15,6 +15,7 @@ import { CredencialService } from 'src/app/service/credencial.service';
   styleUrls: ['./credencial-detalhar.page.scss'],
   standalone: true,
   imports: [
+    IonButton,
     IonTitle,
     IonToolbar,
     IonHeader,
@@ -47,6 +48,8 @@ export class CredencialDetalharPage implements OnInit {
 
   private router = inject(Router);
 
+  private alertController = inject(AlertController);
+
   constructor() {
     addIcons({
       closeOutline,
@@ -55,6 +58,8 @@ export class CredencialDetalharPage implements OnInit {
       copyOutline,
       lockClosedOutline,
       linkOutline,
+      trashOutline,
+      star,
       mailOutline,
     });
   }
@@ -199,4 +204,30 @@ export class CredencialDetalharPage implements OnInit {
         });
     }
   }
+
+  public excluirCredencial() {
+    console.log(this.credencialModel.codigo);
+  }
+
+  public async apresentarAlertaExclusao() {
+    const alert = await this.alertController.create({
+      header: 'Confirmar Ação',
+      message: 'Tem certeza que deseja inativar sua Credencial?',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+        },
+        {
+          text: 'Confirmar',
+          handler: () => {
+            this.excluirCredencial();
+          },
+          cssClass: "alert-botao"
+        }
+      ],
+    });
+    await alert.present();
+  }
+
 }

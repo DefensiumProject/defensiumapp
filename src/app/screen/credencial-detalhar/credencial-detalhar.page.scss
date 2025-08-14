@@ -94,8 +94,6 @@ ion-content {
                 position: absolute;
                 top: 0rem;
                 right: 3.5rem;
-
-                // border: dashed red 1px;
                 ion-icon {
                     cursor: pointer;
                 }
@@ -123,7 +121,19 @@ ion-content {
             background-color: #e5e4e4;
             color: #717171;
             cursor: not-allowed;
-            // border: dashed red 2px;
         }
     }
+    #acao {
+      // border: dashed red 1px;
+      .deletar {
+        margin-top: 2rem;
+        ion-button {
+          height: 50px;
+          text-transform: initial;
+          ion-icon {}
+          ion-label {}
+        }
+      }
+    }
+
 }
