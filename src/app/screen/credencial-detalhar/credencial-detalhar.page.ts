@@ -206,7 +206,13 @@ export class CredencialDetalharPage implements OnInit {
   }
 
   public excluirCredencial() {
-    console.log(this.credencialModel.codigo);
+    this.credencialService.inativarCredencial(this.credencialModel.codigo).subscribe({
+      next: (response) => {
+        this.redirecionarTelaPrincipal();
+        this.apresentarToastSucesso("Credencial Inativada com Sucesso!");
+      },
+      error: (response) => {}
+    });
   }
 
   public async apresentarAlertaExclusao() {

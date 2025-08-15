@@ -40,7 +40,8 @@
             <ion-label>
               <span>{{ credencial.descricao	}}</span>
               <p>
-                {{ credencial.plataforma.url }} ({{ credencial.usuario }})
+                <!-- {{ credencial.plataforma.url }} ({{ credencial.usuario }}) -->
+                  {{ credencial.usuario }}
               </p>
             </ion-label>
             <ion-icon name="chevron-forward-outline" (click)="redirecionarTelaCredencialDetalhar(credencial)"></ion-icon>

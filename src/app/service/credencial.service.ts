@@ -8,9 +8,10 @@ import { CredencialModel } from '../model/credencial.model';
   providedIn: 'root',
 })
 export class CredencialService {
+
   private readonly URL = environment.url.concat('/credencial');
 
-  private httpClient = inject(HttpClient);
+  private readonly httpClient = inject(HttpClient);
 
   constructor() {}
 
@@ -36,7 +37,7 @@ export class CredencialService {
     );
   }
 
-  public excluirCredencial(codigo: number): Observable<any> {
+  public inativarCredencial(codigo: number): Observable<any> {
     return this.httpClient.delete<any>(`${this.URL}/${codigo}`);
   }
 
