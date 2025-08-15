@@ -130,7 +130,9 @@ export class CredencialCadastrarPage implements OnInit {
   }
 
   public redirecionarTelaPrincipal() {
-    this.router.navigate(['tabmenu/principal']);
+    this.router.navigate(['tabmenu/principal'], {
+        queryParams: { refresh: 'true' }
+      });
   }
 
 }
