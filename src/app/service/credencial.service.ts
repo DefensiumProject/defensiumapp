@@ -5,32 +5,40 @@ import { environment } from 'src/environments/environment.prod';
 import { CredencialModel } from '../model/credencial.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CredencialService {
 
-  private readonly URL = environment.url.concat("/credencial");
+  private readonly URL = environment.url.concat('/credencial');
 
-  private httpClient = inject(HttpClient);
+  private readonly httpClient = inject(HttpClient);
 
-  constructor() { }
+  constructor() {}
 
-  public cadastrarCredencial(credencialModel: CredencialModel) : Observable<CredencialModel> {
+  public cadastrarCredencial(
+    credencialModel: CredencialModel
+  ): Observable<CredencialModel> {
     console.log(credencialModel);
     return this.httpClient.post<CredencialModel>(this.URL, credencialModel);
   }
 
-  public recuperarCredencialList() : Observable<any> {
+  public recuperarCredencialList(): Observable<any> {
     return this.httpClient.get<any>(this.URL);
   }
 
-  public recuperarCredencial(codigo: any) : Observable<any> {
-    return this.httpClient.get<any>(this.URL.concat("/").concat(codigo));
+  public recuperarCredencial(codigo: any): Observable<any> {
+    return this.httpClient.get<any>(this.URL.concat('/').concat(codigo));
   }
 
-  public atualizarCredencial(credencialModel: any) : Observable<any> {
-    debugger
-    return this.httpClient.put<any>(this.URL.concat("/").concat(credencialModel.codigo), credencialModel);
+  public atualizarCredencial(credencialModel: any): Observable<any> {
+    return this.httpClient.put<any>(
+      this.URL.concat('/').concat(credencialModel.codigo),
+      credencialModel
+    );
+  }
+
+  public inativarCredencial(codigo: number): Observable<any> {
+    return this.httpClient.delete<any>(`${this.URL}/${codigo}`);
   }
 
 }

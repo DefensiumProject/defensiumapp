@@ -1,10 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <section id="header">
+      <div class="box-a">
+        <ion-avatar>
+          <img src="assets/images/avatar.png" alt="avatar" />
+        </ion-avatar>
+        <ion-text>
+          <b>José Quintinno</b>
+          <p>Administrador</p>
+        </ion-text>
+      </div>
+      <div class="box-b">
+        <ion-icon name="notifications-outline"></ion-icon>
+      </div>
+    </section>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content>
+
+  <section id="searchbar">
+    <div class="searchbar">
+      <img src="assets/icon/search.png" alt="pesquisar" />
+      <input type="text" placeholder="Pesquisar Credenciais" />
+    </div>
+  </section>
 
   <section id="credencial">
 
     <div class="credencial-header">
       <ion-label>Últimas Credenciais</ion-label>
-      <!-- <ion-label>Ver Mais</ion-label> -->
     </div>
 
     <div class="credencial-content">
@@ -15,7 +40,8 @@
             <ion-label>
               <span>{{ credencial.descricao	}}</span>
               <p>
-                {{ credencial.plataforma.url }} ({{ credencial.usuario }})
+                <!-- {{ credencial.plataforma.url }} ({{ credencial.usuario }}) -->
+                  {{ credencial.usuario }}
               </p>
             </ion-label>
             <ion-icon name="chevron-forward-outline" (click)="redirecionarTelaCredencialDetalhar(credencial)"></ion-icon>

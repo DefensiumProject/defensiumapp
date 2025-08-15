@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'principal',
+    redirectTo: 'tabmenu/principal',
     pathMatch: 'full',
   },
   {
@@ -15,15 +15,16 @@ export const routes: Routes = [
     loadComponent: () => import('./component/modal/plataforma/plataforma.page').then( m => m.PlataformaPage)
   },
   {
-    path: 'principal',
-    loadComponent: () => import('./screen/principal/principal.page').then( m => m.PrincipalPage)
-  },
-  {
     path: 'credencial-editar',
     loadComponent: () => import('./screen/credencial/credencial-editar/credencial-editar.page').then( m => m.CredencialEditarPage)
   },
   {
     path: 'credencial-detalhar',
     loadComponent: () => import('./screen/credencial-detalhar/credencial-detalhar.page').then( m => m.CredencialDetalharPage)
+  },
+  {
+    path: 'tabmenu',
+    // loadComponent: () => import('./component/tabmenu/tabmenu.page').then( m => m.TabmenuPage)
+    loadChildren: () => import("./component/tabmenu/tabmenu.routes").then(module => module.tabmenuRoutes),
   },
 ];
