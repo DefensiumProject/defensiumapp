@@ -211,7 +211,9 @@ export class CredencialDetalharPage implements OnInit {
         this.redirecionarTelaPrincipal();
         this.apresentarToastSucesso("Credencial Inativada com Sucesso!");
       },
-      error: (response) => {}
+      error: (response) => {
+        console.error(`[Error] Falha ao tentar Inativar a Credencial de Código ${this.credencialModel.codigo}`);
+      }
     });
   }
 
